@@ -1,0 +1,35 @@
+FFMPEG Commands for editing video (like recording the game)
+
+Snake window was (828,212) to (1254,478) size=(426,266)
+
+Crop video
+ffmpeg -i '.\Game 128 High Score 75.mp4' -filter:v "crop=426:266:828:212" -c:a copy out.mp4
+ffmpeg -i ending.mp4 -filter:v "crop=862:340:393:139" -c:a copy out.mp4
+
+
+393,139
+1255,479
+width=862,340
+
+Preview output
+ffplay -i '.\Game 128 High Score 75.mp4' -vf "crop=426:266:828:212"
+
+Get certain frames
+ffmpeg -i '.\Game 128 High Score 75.mp4' -vf "select=eq(n\,34)" -vframes 1 out.png
+
+Get all frames
+ffmpeg -i '.\Game 128 High Score 75.mp4' frames/frames%d.png
+ffmpeg -i ending.mp4 frames/frames%d.png
+
+
+frames 9,518 are good
+280 to 2363
+237 to 1765
+
+Cut video to frames
+ffmpeg -i '.\Game 128 High Score 75.mp4' -vf select="between(n\,8\,517),setpts=PTS-STARTPTS" -c:a copy out.mp4
+ffmpeg -i ending.mp4 -vf select="between(n\,236\,1764),setpts=PTS-STARTPTS" -c:a copy out.mp4
+
+Make gif
+ffmpeg -i '.\Game 128 High Score 75.mp4' -vf "fps=30,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+ffmpeg -i ending.mp4 -vf "fps=30,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
