@@ -1,7 +1,7 @@
 import numpy as np
 import pygame
 
-pygame.init()
+# pygame.init()
 
 class Snake:
     def __init__(self, useUI=True, grid_width=32, grid_height=20, block_size=20, game_speed=40):
@@ -22,7 +22,8 @@ class Snake:
             self.fontColor = (0, 0, 0)
             self.speed = game_speed
         else:
-            pygame.quit()
+            # pygame.quit()
+            pass
 
         self.reset()
     
@@ -79,9 +80,9 @@ class Snake:
         if self.dangerAt(headPiece) or self.frame > 100 * len(self.pieces):
             reward = -10
             game_over = True
+            print('lost on step {}'.format(self.frame))
             return reward, game_over, self.score
 
-        # Add new head piece
         self.pieces.append(headPiece)
 
         # Collect fruit
@@ -95,15 +96,17 @@ class Snake:
 
 
         # Update UI
-        draw = (n_games % 20) < 5 #For only showing some games
+        draw = (n_games % 20) < 5
         draw = True
         if self.ui and draw:
             self.update_ui(n_games + 1)
             # print('draw')
             self.clock.tick(self.speed)
-
-        # Return status
-        return reward, game_over, self.score
+            # Return status
+            return reward, game_over, self.score
+        else:
+            # Return status
+            return reward, game_over, self.score
 
 
     def dangerAt(self, location):
@@ -171,10 +174,16 @@ class Snake:
             dir_d,
 
             #Food location
-            self.fruit[0] < headPiece[0], #food left
-            self.fruit[0] > headPiece[0], #food right
-            self.fruit[1] < headPiece[1], #food up
-            self.fruit[1] > headPiece[1] #food down
+            self.fruit[0] < self.pieces[-1][0], #food left
+            self.fruit[0] > self.pieces[-1][0], #food right
+            self.fruit[1] < self.pieces[-1][1], #food up
+            self.fruit[1] > self.pieces[-1][1] #food down
         ]
 
         return np.array(state, dtype=int)
+
+
+snake = Snake(game_speed=100, useUI=False)
+
+reward, done, score = snake.step([1, 0, 0], 0)
+print(done)

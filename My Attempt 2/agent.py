@@ -80,7 +80,7 @@ def train():
         final_move = agent.get_action(state_old)
 
         # perform move and get new state
-        reward, done, score = game.step(final_move, agent.n_games % 10 == 0)
+        reward, done, score = game.step(final_move, agent.n_games)
         state_new = agent.get_state(game)
 
         # train short memory
