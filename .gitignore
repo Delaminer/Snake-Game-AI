@@ -1,0 +1,9 @@
+#VS Code settings
+.vscode/
+
+#Attempts to use TensorFlow (I was unable to get TensorFlow working, so I moved to PyTorch which did work)
+sampleAI/
+sampleAI2/
+sampleAI3/
+sampleAI4/
+Learn Environments/
