@@ -2,15 +2,15 @@
 In this project, I learned how to make games in Python, made [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)), and how to make an artificial intelligence play Snake.
 
 ## Steps
-I first learned how to make games with python using pygame, following [this tutorial](https://realpython.com/pygame-a-primer/), which is located in the Learn PyGame folder.
+I first learned how to make games with python using pygame, following [this tutorial](https://realpython.com/pygame-a-primer/), which is located in the [Learn PyGame](https://github.com/Delaminer/Snake-Game-AI/tree/master/Learn%20PyGame) folder.
 
-After this, I made my own Snake game, which is in the My Attempt 1 folder.
+After this, I made my own Snake game, which is in the [My Attempt 1](https://github.com/Delaminer/Snake-Game-AI/tree/master/My%20Attempt%201) folder.
 
 With this Snake game, I tried to use TensorFlow for the AI. After several attempts, I was unable to do so and so I looked into doing it another way.
 
-I found [this tutorial](https://www.youtube.com/watch?v=PJl4iabBEz0&list=PLqnslRFeH2UrDh7vUmJ60YrmWd64mTTKV), which did work, which is located in the Full Tutorial folder. This tutorial uses PyTorch instead of TensorFlow, which I found much easier to use.
+I found [this tutorial](https://www.youtube.com/watch?v=PJl4iabBEz0&list=PLqnslRFeH2UrDh7vUmJ60YrmWd64mTTKV), which did work, which is located in the [Full Tutorial](https://github.com/Delaminer/Snake-Game-AI/tree/master/Full%20tutorial) folder. This tutorial uses PyTorch instead of TensorFlow, which I found much easier to use.
 
-Using what I learned from that tutorial, I added PyTorch to my Snake game, which is in the My Attempt 2 folder.
+Using what I learned from that tutorial, I added PyTorch to my Snake game, which is in the [My Attempt 2](https://github.com/Delaminer/Snake-Game-AI/tree/master/My%20Attempt%202) folder.
 
 ## About the AI
 This AI uses Reinforcement Learning, it learns from the rewards it receives (positive rewards when picking up fruit, negative rewards when losing) when performing actions (moving around the board) to decide how to act in the future. It also uses Deep Q learning because a deep neural network is netword is used to make decisions (a deep neural network is one or more hidden layers between the sensor input and the calculated output).
@@ -28,7 +28,7 @@ Here is a graph of its results after 750 games:
 
 ![Graph of 750 games](https://github.com/Delaminer/Snake-Game-AI/blob/master/Media/Graph%20after%20game%20750.png)
 
-Here is it playing after around 600 rounds:
+Here it is playing after around 600 rounds:
 
 ![late game](https://github.com/Delaminer/Snake-Game-AI/blob/master/Media/ending.gif)
 

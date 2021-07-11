@@ -23,7 +23,7 @@ After 750 games:
 
 ## Gameplay
 
-There is an MP4 video for each GIF, but they can't be seen in markdown files, you will have to download them to watch them
+There is an MP4 video for each GIF, but they can't be seen in markdown files, you will have to download them to watch them.
 
 First 50 games:
 
